@@ -9,22 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var hero_1 = require('./hero');
-var HeroDetailComponent = (function () {
-    function HeroDetailComponent() {
+var mock_heroes_1 = require('./mock-heroes');
+var HeroService = (function () {
+    function HeroService() {
     }
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', hero_1.Hero)
-    ], HeroDetailComponent.prototype, "hero", void 0);
-    HeroDetailComponent = __decorate([
-        core_1.Component({
-            selector: 'my-hero-detail',
-            template: "\n\t\t<div *ngIf=\"hero\">\n  \t\t\t<h2>{{hero.name}} details!</h2>\n  \t\t\t<div>\n  \t\t\t\t<label>id: </label>{{hero.id}}\n  \t\t\t</div>\n  \t\t\t<div>\n  \t\t\t\t<label>name: </label>\n  \t\t\t\t<input [(ngModel)]=\"hero.name\" placeholder=\"name\"/>\n  \t\t\t</div>\n  \t\t</div>\n\t"
-        }), 
+    HeroService.prototype.getHeroes = function () {
+        return mock_heroes_1.HEROES;
+    };
+    HeroService = __decorate([
+        core_1.Injectable(), 
         __metadata('design:paramtypes', [])
-    ], HeroDetailComponent);
-    return HeroDetailComponent;
+    ], HeroService);
+    return HeroService;
 }());
-exports.HeroDetailComponent = HeroDetailComponent;
-//# sourceMappingURL=hero-detail.component.js.map
+exports.HeroService = HeroService;
+//# sourceMappingURL=hero.service.js.map
